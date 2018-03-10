@@ -4,7 +4,7 @@
 
 2. Using Visual Studio to open the project.
 
-3. Open Package Manager Console (Click Tools -> NuGet Package Manager -> Package Manager Console)
+3. Open Package Manager Console (Click Tools -> NuGet Package Manager -> Package Manager Console) and if necessary need to restore the package for database.
 
 4. Enter 2 commands "add-migration Initial" and "update-database" in Package Manager Console.
       (These commands create a local database and dump the data from ECB into the local database automatically)
