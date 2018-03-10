@@ -13,6 +13,11 @@ namespace ECB_WebAPI.Models
         [Required]
         public DateTime Date { get; set; }
         public string Currency { get; set; }
-        public decimal Rate { get; set; }
+
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:N}")]
+        public double Rate { get; set; }
+
+
+    
     }
 }

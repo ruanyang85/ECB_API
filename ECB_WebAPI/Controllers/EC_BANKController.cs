@@ -34,6 +34,7 @@ namespace ECB_WebAPI.Controllers
         [ResponseType(typeof(ECB))]
         public async Task<IHttpActionResult> GetByDate(DateTime date)
         {
+            
             List<ECB> listLatest = new List<ECB>();
             using (SqlConnection con = new SqlConnection(str))
             {
@@ -55,7 +56,7 @@ namespace ECB_WebAPI.Controllers
                 listLatest.Add(latest);
                 con.Close();
             }
-
+            await db.SaveChangesAsync();
             return Ok(listLatest);
         }
 
@@ -118,7 +119,13 @@ namespace ECB_WebAPI.Controllers
                 latest.rates = new Dictionary<string, decimal>();
                 while (rdr.Read())
                 {
-                    latest.rates.Add(rdr["Currency"].ToString(), Convert.ToDecimal(rdr["Rate"]));
+                    try
+                    {
+                        latest.rates.Add(rdr["Currency"].ToString(), Convert.ToDecimal(rdr["Rate"]));
+                    }
+                    catch
+                    {
+                    }
                 };
 
                 listLatest.Add(latest);

@@ -259,3 +259,11 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+/ECB_WebAPI/Migrations/201803100544227_Initial1.cs
+/ECB_WebAPI/Migrations/201803100544227_Initial1.Designer.cs
+/ECB_WebAPI/Migrations/201803100544227_Initial1.resx
+/ECB_WebAPI/Migrations/201803100902476_Initial2.cs
+/ECB_WebAPI/Migrations/201803100902476_Initial2.Designer.cs
+/ECB_WebAPI/Migrations/201803100902476_Initial2.resx
+/ECB_WebAPI/Migrations/201803100947189_Initial3.cs
+/ECB_WebAPI/Migrations/201803100947189_Initial3.Designer.cs

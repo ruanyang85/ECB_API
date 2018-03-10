@@ -5,6 +5,7 @@ namespace ECB_WebAPI.Migrations
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Data.SqlClient;
+    using System.Diagnostics;
     using System.Globalization;
     using System.Linq;
     using System.Xml.Linq;
@@ -42,28 +43,26 @@ namespace ECB_WebAPI.Migrations
                            .Select(x => new {
                                Date = DateTime.ParseExact(x.Parent.Attribute("time").Value, "yyyy-MM-dd", CultureInfo.InvariantCulture),
                                Currency = (string)x.Attribute("currency"),
-                               Rate = (decimal)x.Attribute("rate")
+                               Rate = (double)x.Attribute("rate")
                            });
-      
+
             foreach (var result in cubes)
             {
-                try
-                {
-                   
 
-                    context.EC_BANK.AddOrUpdate(new Models.EC_BANK() {
-                        Date = result.Date, Currency= result.Currency,Rate = result.Rate
-                    });
 
-                }
-                catch
+
+                context.EC_BANK.AddOrUpdate(new Models.EC_BANK()
                 {
-              
-                }
+                    Date = result.Date,
+                    Currency = result.Currency,
+                    Rate = result.Rate
+                });
+
+
+                Debug.WriteLine(result.Rate.ToString());
+
+
             }
-           
-       
-
         }
     }
 }

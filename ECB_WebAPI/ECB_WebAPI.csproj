@@ -100,6 +100,18 @@
     <Compile Include="Migrations\201803100250203_Initial.Designer.cs">
       <DependentUpon>201803100250203_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803100544227_Initial1.cs" />
+    <Compile Include="Migrations\201803100544227_Initial1.Designer.cs">
+      <DependentUpon>201803100544227_Initial1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803100902476_Initial2.cs" />
+    <Compile Include="Migrations\201803100902476_Initial2.Designer.cs">
+      <DependentUpon>201803100902476_Initial2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803100947189_Initial3.cs" />
+    <Compile Include="Migrations\201803100947189_Initial3.Designer.cs">
+      <DependentUpon>201803100947189_Initial3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ECB.cs" />
     <Compile Include="Models\ECB_Analyze.cs" />
@@ -122,6 +134,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201803100250203_Initial.resx">
       <DependentUpon>201803100250203_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803100544227_Initial1.resx">
+      <DependentUpon>201803100544227_Initial1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803100902476_Initial2.resx">
+      <DependentUpon>201803100902476_Initial2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803100947189_Initial3.resx">
+      <DependentUpon>201803100947189_Initial3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
