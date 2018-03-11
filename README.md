@@ -10,7 +10,7 @@
 
 5. Run the project from Visual Studio and at same time it will dump the data from ECB into the local database. Every time run the code, the database will update based on the latest rate from ECB. (Make sure using Microsoft Edge because Google Chrome may have some style format issues and Internet Explorer may ask you to download the json file)
 
-6. For testing: add "/rates/lastest" to the URL to get the latest record. Add "/rates/YYYY-mm-dd" to get the record based on specific date.Add "/rates/analyze" to get the minmum,maxmum and average value. All sorted by Currency.
+6. For testing: add "/rates/lastest" to the URL to get the latest record. Add "/rates/YYYY-mm-dd" to get the record based on specific date.Add "/rates/analyze" to get the minmum,maxmum and average value. All sorted by Currency. Make sure the operating system using date format "mm/dd/YYYY". If date format for OS is differnt may cause the date here different.(Like OS is "dd/mm/YYYY" then the "/rates/YYYY-mm-dd" may become "/rates/YYYY-dd-mm")
 
 
 I have tried 4 times and all work fine.If you face any issues please let me know anytime.
