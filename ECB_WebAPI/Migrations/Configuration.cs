@@ -31,38 +31,7 @@ namespace ECB_WebAPI.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
-            string str = ConfigurationManager.ConnectionStrings["ECB_WebAPIContext"].ConnectionString;
-
-            string url = "https://www.ecb.europa.eu/stats/eurofxref/eurofxref-hist-90d.xml ";
-            XDocument doc = XDocument.Load(url);
-            XNamespace gesmes = "http://www.gesmes.org/xml/2002-08-01";
-            XNamespace ns = "http://www.ecb.int/vocabulary/2002-08-01/eurofxref";
-
-            var cubes = doc.Descendants(ns + "Cube")
-                           .Where(x => x.Attribute("currency") != null)
-                           .Select(x => new {
-                               Date = DateTime.ParseExact(x.Parent.Attribute("time").Value, "yyyy-MM-dd", CultureInfo.InvariantCulture),
-                               Currency = (string)x.Attribute("currency"),
-                               Rate = (double)x.Attribute("rate")
-                           });
-
-            foreach (var result in cubes)
-            {
-
-
-
-                context.EC_BANK.AddOrUpdate(new Models.EC_BANK()
-                {
-                    Date = result.Date,
-                    Currency = result.Currency,
-                    Rate = result.Rate
-                });
-
-
-                Debug.WriteLine(result.Rate.ToString());
-
-
-            }
+          
         }
     }
 }

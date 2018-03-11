@@ -9,7 +9,7 @@ namespace ECB_WebAPI.Models
 {
     public class EC_BANK
     {
-        public int id { get; set; }
+        public Char id { get; set; }
         [Required]
         public DateTime Date { get; set; }
         public string Currency { get; set; }
