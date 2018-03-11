@@ -33,7 +33,7 @@ namespace ECB_WebAPI
             var cubes = doc.Descendants(ns + "Cube")
                            .Where(x => x.Attribute("currency") != null)
                            .Select(x => new {
-                               Date = DateTime.ParseExact(x.Parent.Attribute("time").Value, "yyyy-MM-dd", CultureInfo.InvariantCulture),
+                               Date = (DateTime)x.Parent.Attribute("time"),
                                Currency = (string)x.Attribute("currency"),
                                Rate = (decimal)x.Attribute("rate")
                            });
@@ -43,7 +43,7 @@ namespace ECB_WebAPI
 
                 try
                 {
-                    sql = "INSERT INTO EC_BANK(id,Date,Currency,Rate) VALUES('" + result.Date.Year.ToString() + result.Date.Month.ToString() + result.Date.Day.ToString() + result.Currency.ToString() + "','" + result.Date.ToString() + "','" + result.Currency + "'," + result.Rate.ToString() + ")";
+                    sql = "INSERT INTO EC_BANK(id,Date,Currency,Rate) VALUES('" + result.Date.Year.ToString() + result.Date.Month.ToString() + result.Date.Day.ToString() + result.Currency.ToString() + "','" + result.Date.ToString("dd-MMM-yy", new CultureInfo("en-US")) + "','" + result.Currency + "'," + result.Rate.ToString() + ")";
                     cmd = new SqlCommand(sql, con);
                     da.InsertCommand = cmd;
                     da.InsertCommand.ExecuteNonQuery();
