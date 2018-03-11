@@ -11,3 +11,6 @@
 5. Run the project from Visual Studio.(Make sure using Microsoft Edge because Google Chrome may have some style format issues and Internet Explorer may ask you to download the json file)
 
 6. For testing: add "/rates/lastest" to the URL to get the latest record. Add "/rates/YYYY-mm-dd" to get the record based on specific date.Add "/rates/analyze" to get the minmum,maxmum and average value. All sorted by Currency.
+
+
+I have tried 2 times and all work fine.If you face any issues can let me know anytime.
